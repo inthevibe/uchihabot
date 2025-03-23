@@ -9,9 +9,14 @@ pub fn build(b: *std.Build) void {
         .target = target,
         .optimize = optimize,
     });
+    const dotenv_dep = b.dependency("dotenv", .{
+        .target = target,
+        .optimize = optimize,
+    });
 
     // Step 2: Get the httpz module
     const httpz_module = httpz_dep.module("httpz");
+    const dotenv_module = dotenv_dep.module("dotenv");
 
     // Step 3: Configure your executable
     const exe = b.addExecutable(.{
@@ -23,6 +28,7 @@ pub fn build(b: *std.Build) void {
 
     // Step 4: Add the httpz module to your executable
     exe.root_module.addImport("httpz", httpz_module);
+    exe.root_module.addImport("dotenv", dotenv_module);
     // Step 5: Install the executable
     b.installArtifact(exe);
 

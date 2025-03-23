@@ -7,6 +7,10 @@
             .url = "git+https://github.com/karlseguin/http.zig#cb760afdb50b1e4b3f37570e6ddbbd04bf9d5c32",
             .hash = "httpz-0.0.0-PNVzrK6uBgBYP4D-QGrd_g1A6ZS86NQcLJZEPZyRFFoH",
         },
+        .dotenv = .{
+            .url = "git+https://github.com/zigster64/dotenv.zig?ref=main#0fd7fbf0a010c28f79049b11f5acd64f0b44928c",
+            .hash = "dotenv-0.1.0-Q9TxelULAACDvJnHXkonPptJ4oOIZQYUrwCqKgKtSOdH",
+        },
     },
     .paths = .{""},
 }
